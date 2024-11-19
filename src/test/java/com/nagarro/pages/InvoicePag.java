@@ -10,6 +10,7 @@ public class InvoicePag {
 	private WebDriver driver;
 	private Web_Lib weblib ;
 	
+//constructor
 	public InvoicePag() {
 		this.driver = DriverManager.getDriver();
 		this.weblib = new Web_Lib();
