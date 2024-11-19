@@ -32,6 +32,7 @@ public class CountriesPage {
 		  return numberofrows;
 		  
 	  }
+//getting the number of columns of a webtable
 	 
 	  public int numofColumns() {
 			
