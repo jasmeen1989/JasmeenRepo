@@ -55,7 +55,7 @@ public class ExtentReportManager {
         getTest().log(Status.WARNING, message);
     }
 
-    private static ExtentTest getTest() {
+    public static ExtentTest getTest() {
         return testThreadLocal.get();
     }
 

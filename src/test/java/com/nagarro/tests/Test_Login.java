@@ -1,5 +1,6 @@
 package com.nagarro.tests;
 
+import org.testng.Assert;
 import org.testng.ITestContext;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -38,6 +39,10 @@ public class Test_Login extends BaseClass {
         int id = 123;
         
         context.setAttribute("extractedId", id);
+        
+        Assert.assertEquals(true, true);
+        
+       // Assert.assertEquals("Kuta", "Billi");
      
 
     }

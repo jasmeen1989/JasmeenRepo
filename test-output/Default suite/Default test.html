@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Nov 14 17:46:13 IST 2024</td>
+<td>Started on:</td><td>Wed Nov 20 12:35:24 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>13 seconds (13798 ms)</td>
+<tr><td>Total time:</td><td>10 seconds (10336 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,10 +76,15 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.nagarro.tests.SelectorHub.getButtons()'><b>getButtons</b><br>Test class: com.nagarro.tests.SelectorHub</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.findElements(org.openqa.selenium.By)&quot; because &quot;this.driver&quot; is null
-	at com.nagarro.util.Web_Lib.getElements(Web_Lib.java:130)
-	at com.nagarro.tests.SelectorHub.getButtons(SelectorHub.java:29)
+<td title='com.nagarro.tests.Test_Login.verifyLoginWithStdUser()'><b>verifyLoginWithStdUser</b><br>Test class: com.nagarro.tests.Test_Login<br>Parameters: org.testng.TestRunner@6f6621e3</td>
+<td><div><pre>java.lang.AssertionError: expected [Billi] but found [Kuta]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1577)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+	at org.testng.Assert.assertEquals(Assert.java:131)
+	at org.testng.Assert.assertEquals(Assert.java:655)
+	at org.testng.Assert.assertEquals(Assert.java:665)
+	at com.nagarro.tests.Test_Login.verifyLoginWithStdUser(Test_Login.java:45)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -108,10 +113,15 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace102577332", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace102577332'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.findElements(org.openqa.selenium.By)&quot; because &quot;this.driver&quot; is null
-	at com.nagarro.util.Web_Lib.getElements(Web_Lib.java:130)
-	at com.nagarro.tests.SelectorHub.getButtons(SelectorHub.java:29)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1828871453", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1828871453'><pre>java.lang.AssertionError: expected [Billi] but found [Kuta]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1577)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+	at org.testng.Assert.assertEquals(Assert.java:131)
+	at org.testng.Assert.assertEquals(Assert.java:655)
+	at org.testng.Assert.assertEquals(Assert.java:665)
+	at com.nagarro.tests.Test_Login.verifyLoginWithStdUser(Test_Login.java:45)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -141,8 +151,8 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>0</td>
-<td>com.nagarro.tests.SelectorHub@68d279ec</td></tr>
+<td>1</td>
+<td>com.nagarro.tests.Test_Login@71e693fa</td></tr>
 </table><p>
 </body>
 </html>

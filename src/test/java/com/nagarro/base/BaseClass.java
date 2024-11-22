@@ -1,5 +1,6 @@
 package com.nagarro.base;
 
+import java.io.IOException;
 import java.lang.reflect.Method;
 
 import org.openqa.selenium.WebDriver;
@@ -17,6 +18,7 @@ import com.nagarro.config.Configs;
 import com.nagarro.config.Constants;
 import com.nagarro.pages.LoginPage;
 import com.nagarro.reporting.ExtentReportManager;
+import com.nagarro.reporting.ScreenshotManager;
 import com.nagarro.util.DriverManager;
 
 public class BaseClass {
@@ -41,18 +43,38 @@ public class BaseClass {
        loginPage = new LoginPage();
     }
 	
-	@AfterMethod(alwaysRun = true)
-	public void afterEveryMethod(ITestResult result) {		
-		System.out.println("After method from base class");
-		if(result.getStatus() == ITestResult.FAILURE) {
-			ExtentReportManager.reportFailure(result.getName()+" Test Failed");
-		}else if(result.getStatus() == ITestResult.SUCCESS){
-			ExtentReportManager.reportPass(result.getName()+" Test Success");
-		}
-		//DriverManager.getDriver().quit();
-		ExtentReportManager.endTest();	
-		
-	}
+    @AfterMethod(alwaysRun = true)
+    public void afterEveryMethod(ITestResult result) {
+        System.out.println("After method from base class");
+        
+        // Capture if test fails due to an assertion error or other reasons
+        if(result.getStatus() == ITestResult.FAILURE) {
+            // Log failure message in ExtentReports
+            Throwable throwable = result.getThrowable();
+            if (throwable instanceof AssertionError) {
+                ExtentReportManager.reportFailure(result.getName() + " Test Failed due to AssertionError: " + throwable.getMessage());
+            } else {
+                ExtentReportManager.reportFailure(result.getName() + " Test Failed: " + throwable.getMessage());
+            }
+
+            // Capture screenshot on failure
+            try {
+                String screenshotPath = ScreenshotManager.captureScreenshot(result.getName());
+                // Attach the screenshot to the Extent report
+                ExtentReportManager.getTest().addScreenCaptureFromPath(screenshotPath);
+            } catch (IOException e) {
+                // Log if screenshot capture fails
+                ExtentReportManager.reportFailure("Failed to capture screenshot: " + e.getMessage());
+            }
+        } else if(result.getStatus() == ITestResult.SUCCESS) {
+            ExtentReportManager.reportPass(result.getName() + " Test Success");
+        }
+
+        // End the test in ExtentReport
+        ExtentReportManager.endTest();
+        DriverManager.getDriver().quit();
+    }
+
 	
 	
 	public WebDriver launchBrowser(String strBrowser) {		

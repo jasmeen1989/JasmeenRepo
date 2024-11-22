@@ -1,21 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="1" total="2" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-11-14T17:46:13 IST" name="Default suite" finished-at="2024-11-14T17:46:27 IST" duration-ms="13798">
+  <suite started-at="2024-11-20T12:35:24 IST" name="Default suite" finished-at="2024-11-20T12:35:34 IST" duration-ms="10336">
     <groups>
+      <group name="smoke">
+        <method signature="Test_Login.verifyLoginWithStdUser(org.testng.ITestContext)[pri:0, instance:com.nagarro.tests.Test_Login@71e693fa]" name="verifyLoginWithStdUser" class="com.nagarro.tests.Test_Login"/>
+      </group> <!-- smoke -->
     </groups>
-    <test started-at="2024-11-14T17:46:13 IST" name="Default test" finished-at="2024-11-14T17:46:27 IST" duration-ms="13798">
-      <class name="com.nagarro.tests.SelectorHub">
-        <test-method is-config="true" signature="onSuiteStart()[pri:0, instance:com.nagarro.tests.SelectorHub@68d279ec]" started-at="2024-11-14T17:46:13 IST" name="onSuiteStart" finished-at="2024-11-14T17:46:13 IST" duration-ms="28" status="PASS">
+    <test started-at="2024-11-20T12:35:24 IST" name="Default test" finished-at="2024-11-20T12:35:34 IST" duration-ms="10336">
+      <class name="com.nagarro.tests.Test_Login">
+        <test-method is-config="true" signature="onSuiteStart()[pri:0, instance:com.nagarro.tests.Test_Login@71e693fa]" started-at="2024-11-20T12:35:24 IST" name="onSuiteStart" finished-at="2024-11-20T12:35:24 IST" duration-ms="35" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- onSuiteStart -->
-        <test-method is-config="true" signature="beforeEveryMethod(java.lang.reflect.Method,java.lang.String)[pri:0, instance:com.nagarro.tests.SelectorHub@68d279ec]" started-at="2024-11-14T17:46:13 IST" name="beforeEveryMethod" finished-at="2024-11-14T17:46:26 IST" duration-ms="12947" status="PASS">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.nagarro.tests.Test_Login@71e693fa]" started-at="2024-11-20T12:35:24 IST" name="beforeClass" finished-at="2024-11-20T12:35:24 IST" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method is-config="true" signature="beforeEveryMethod(java.lang.reflect.Method,java.lang.String)[pri:0, instance:com.nagarro.tests.Test_Login@71e693fa]" started-at="2024-11-20T12:35:24 IST" name="beforeEveryMethod" finished-at="2024-11-20T12:35:32 IST" duration-ms="8097" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.nagarro.tests.SelectorHub.getButtons()]]>
+                <![CDATA[public void com.nagarro.tests.Test_Login.verifyLoginWithStdUser(org.testng.ITestContext)]]>
               </value>
             </param>
             <param index="1">
@@ -27,15 +34,27 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeEveryMethod -->
-        <test-method signature="getButtons()[pri:0, instance:com.nagarro.tests.SelectorHub@68d279ec]" started-at="2024-11-14T17:46:26 IST" name="getButtons" finished-at="2024-11-14T17:46:26 IST" duration-ms="33" status="FAIL">
-          <exception class="java.lang.NullPointerException">
+        <test-method signature="verifyLoginWithStdUser(org.testng.ITestContext)[pri:0, instance:com.nagarro.tests.Test_Login@71e693fa]" started-at="2024-11-20T12:35:32 IST" name="verifyLoginWithStdUser" finished-at="2024-11-20T12:35:33 IST" duration-ms="1169" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@6f6621e3]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[Cannot invoke "org.openqa.selenium.WebDriver.findElements(org.openqa.selenium.By)" because "this.driver" is null]]>
+              <![CDATA[expected [Billi] but found [Kuta]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.findElements(org.openqa.selenium.By)" because "this.driver" is null
-at com.nagarro.util.Web_Lib.getElements(Web_Lib.java:130)
-at com.nagarro.tests.SelectorHub.getButtons(SelectorHub.java:29)
+              <![CDATA[java.lang.AssertionError: expected [Billi] but found [Kuta]
+at org.testng.Assert.fail(Assert.java:110)
+at org.testng.Assert.failNotEquals(Assert.java:1577)
+at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+at org.testng.Assert.assertEquals(Assert.java:131)
+at org.testng.Assert.assertEquals(Assert.java:655)
+at org.testng.Assert.assertEquals(Assert.java:665)
+at com.nagarro.tests.Test_Login.verifyLoginWithStdUser(Test_Login.java:45)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -66,33 +85,37 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getButtons -->
-        <test-method is-config="true" signature="afterEveryMethod(org.testng.ITestResult)[pri:0, instance:com.nagarro.tests.SelectorHub@68d279ec]" started-at="2024-11-14T17:46:26 IST" name="afterEveryMethod" finished-at="2024-11-14T17:46:27 IST" duration-ms="716" status="PASS">
+        </test-method> <!-- verifyLoginWithStdUser -->
+        <test-method is-config="true" signature="afterEveryMethod(org.testng.ITestResult)[pri:0, instance:com.nagarro.tests.Test_Login@71e693fa]" started-at="2024-11-20T12:35:33 IST" name="afterEveryMethod" finished-at="2024-11-20T12:35:34 IST" duration-ms="950" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=getButtons status=FAILURE method=SelectorHub.getButtons()[pri:0, instance:com.nagarro.tests.SelectorHub@68d279ec] output={null}]]]>
+                <![CDATA[[TestResult name=verifyLoginWithStdUser status=FAILURE method=Test_Login.verifyLoginWithStdUser(org.testng.ITestContext)[pri:0, instance:com.nagarro.tests.Test_Login@71e693fa] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterEveryMethod -->
-        <test-method is-config="true" signature="onFinish(org.testng.ITestContext)[pri:0, instance:com.nagarro.tests.SelectorHub@68d279ec]" started-at="2024-11-14T17:46:27 IST" name="onFinish" finished-at="2024-11-14T17:46:27 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:com.nagarro.tests.Test_Login@71e693fa]" started-at="2024-11-20T12:35:34 IST" name="afterClass" finished-at="2024-11-20T12:35:34 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+        <test-method is-config="true" signature="onFinish(org.testng.ITestContext)[pri:0, instance:com.nagarro.tests.Test_Login@71e693fa]" started-at="2024-11-20T12:35:34 IST" name="onFinish" finished-at="2024-11-20T12:35:34 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@507d64aa]]>
+                <![CDATA[org.testng.TestRunner@6f6621e3]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- onFinish -->
-      </class> <!-- com.nagarro.tests.SelectorHub -->
+      </class> <!-- com.nagarro.tests.Test_Login -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
